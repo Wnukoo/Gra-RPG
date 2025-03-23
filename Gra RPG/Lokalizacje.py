@@ -7,13 +7,12 @@
         print(self.opis)
         print("1. Ulepsz broń")
         print("2. Wyjdź")
-        
         akcja = input("Wybierz akcję: ") 
         if akcja == "1":
             print("Broń ulepszona!")
         elif akcja == "2":
             print("Do widzenia!")
-
+        print ("---------------------------------")
     def sklep(self):
         print(self.opis)
         print("1. Kup przedmiot")
@@ -26,7 +25,7 @@
             print("Przedmiot sprzedany!")
         elif akcja == "3":
             print("Do widzenia!")
-
+        print ("---------------------------------")
     def karczma(self):
         print(self.opis)
         print("1. Odpocznij")
@@ -36,7 +35,7 @@
             print("Odpoczynek!")
         elif akcja == "2":
             print("Do widzenia!")
-
+        print ("---------------------------------")
     def polowanie(self):
         print(self.opis)
         print("1. Poluj")
@@ -46,6 +45,4 @@
             print("Polowanie!")
         elif akcja == "2":
             print("Do widzenia!")
-
-    def __str__(self):
-        return f"Lokalizacja: {self.nazwa}\nOpis: {self.opis}"
+        print ("---------------------------------")
