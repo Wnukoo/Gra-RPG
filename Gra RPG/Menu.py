@@ -28,7 +28,8 @@ class Menu:
             elif choose == "4":
                 self.polowanie.polowanie()
             elif choose == "5":
-                print(self.gracz)
+                #print(self.gracz)
+                self.gracz.gracz()
             elif choose == "6":
                 print("Do zobaczenia!")
                 break        

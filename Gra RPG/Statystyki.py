@@ -5,6 +5,16 @@
         self.atak = atak
         self.pieniadze = pieniadze
         self.user = user
+    
+    def gracz (self):
+        self.hp = 100
+        self.atak = 10
+        self.pieniadze = 50
+        print(f"Statystyki {self.user}:\n")
+        print(f"HP: {self.hp}")
+        print(f"Atak: {self.atak}")
+        print(f"Pieniądze: {self.pieniadze}")
+        print("-" * 20)
 
     def __str__(self):
         return (
