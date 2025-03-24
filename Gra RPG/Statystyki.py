@@ -1,39 +1,36 @@
 ﻿class Statystyki:
+    def __init__(self, hp=100, atak=10, gold=50):
+        self.hp = hp
+        self.atak = atak
+        self.gold = gold
 
-    # def __init__(self,user, hp, atak, pieniadze):
-    #     self.hp = hp
-    #     self.atak = atak
-    #     self.pieniadze = pieniadze
-    #     self.user = user
-        
-
-    def gracz (self):
-        hp = 1000
-        atak = 100
-        pieniadze = 500
-        print(f"Statystyki Gracza:\n")
-        print(f"HP: {hp}")
-        print(f"Atak: {atak}")
-        print(f"Pieniądze: {pieniadze}")
+    def wyswietl_statystyki(self):
+        print("Statystyki Gracza:")
+        print(f"HP: {self.hp}")
+        print(f"Atak: {self.atak}")
+        print(f"Pieniądze: {self.gold}")
         print("-" * 20)
 
-    def __str__(self):
-        return (
-            f"Statystyki {self.user}:\n"
-            f"HP: {self.hp}\n"
-            f"Atak: {self.atak}\n"
-            f"Pieniądze: {self.pieniadze}\n"
-            + "-" * 20
-            )
+    def up_kowal(self, kwota, atak):
+        if kwota > self.gold:
+            print("Nie masz tyle pieniędzy!")
+            print("Zarob więcej złota!")
+        else:
+            print("Bron ulepszona!")
+            print("Twoj atak zwiekszyl sie o 5!")
+            self.gold -= kwota
+            self.atak += 5
+            print(f"Zostało Ci {self.gold} złota, atak zostal ulepszony o 5!")
 
-    def wyswietl_statystyki(self, nazwa):
-        print(self.__str__().replace("postaci", nazwa))
+    def up_karczma(self, hp):
+        self.hp == hp
+        print("Odpoczynek!")
+        print(f"Twoje HP wynosi {self.hp}!")
 
-    def zmien_statystyki(self, hp=0, atak=0, pieniadze=0):
-        self.hp += hp
-        self.atak += atak
-        self.pieniadze += pieniadze
-        print(f"\nZmieniono statystyki: HP {hp}, Atak {atak}, Pieniądze {pieniadze}\n")
+
+
+
+
 
 
 # Wyświetlanie statystyk

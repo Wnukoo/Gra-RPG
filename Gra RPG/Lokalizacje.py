@@ -2,9 +2,10 @@
 
 class Lokalizacje:
 
-    def __init__(self, nazwa, opis):
+    def __init__(self, nazwa, opis, gracz):
         self.nazwa = nazwa  
         self.opis = opis
+        self.gracz = gracz  # Tworzymy obiekt gracza jako atrybut klasy
         #Potwory
         # self.potwory=[]
         # self.potwory.append(Statystyki("1 - Goblin", 50, 5, 10))
@@ -20,25 +21,9 @@ class Lokalizacje:
         print("2. Wyjdź")
         akcja = input("Wybierz akcję: ") 
         if akcja == "1":
-            print("Bron ulepszona!")
-            print("Twoj atak zwiekszyl sie o 5!")
-            self.gracz.zmien_statystyki(hp=0, atak=5, pieniadze=-5)
-            print(self.gracz)
+            self.gracz.up_kowal(5, 5)
+  #          self.gracz.wyswietl_statystyki()
         elif akcja == "2":
-            print("Do widzenia!")
-        print ("---------------------------------")
-
-    def sklep(self):
-        print(self.opis)
-        print("1. Kup przedmiot")
-        print("2. Sprzedaj przedmiot")
-        print("3. Wyjdź")
-        akcja = input("Wybierz akcję: ")
-        if akcja == "1":
-            print("Przedmiot kupiony!")
-        elif akcja == "2":
-            print("Przedmiot sprzedany!")
-        elif akcja == "3":
             print("Do widzenia!")
         print ("---------------------------------")
 
@@ -48,7 +33,7 @@ class Lokalizacje:
         print("2. Wyjdź")
         akcja = input("Wybierz akcję: ")
         if akcja == "1":
-            print("Odpoczynek!")
+           self.gracz.up_karczma(100)
         elif akcja == "2":
             print("Do widzenia!")
         print ("---------------------------------")
