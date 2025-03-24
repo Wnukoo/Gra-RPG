@@ -16,6 +16,8 @@ class Menu:
             print("3 - Idz na polowanie")
             print("4 - Zobacz statystyki")
             print("5 - Wyjscie")
+            print("6 - Zapisz grę")
+            print("7 - Wczytaj grę")
             choose = input("Wybierz: ")
             if choose == "1":
                 self.kowal.kowal()
@@ -28,5 +30,9 @@ class Menu:
             elif choose == "5":
                 print("Do zobaczenia!")
                 break        
+            elif choose == "6":
+                self.gracz.zapisz_stan("stan_gry.txt")
+            elif choose == "7":
+                self.gracz.wczytaj_stan("stan_gry.txt")
         
         

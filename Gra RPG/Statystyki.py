@@ -38,7 +38,7 @@
         print(f"Zloto: {zloto}")
         choose = input("Czy chcesz zaatakować goblina? (T/N): ").upper()
         if choose == "T":
-            if (atak_goblin >= self.hp & hp_goblin >= self.atak ):
+            if (atak_goblin >= self.hp and hp_goblin >= self.atak ):
                 print("Przegrałeś!")
                 print("Odpocznij w karczmie aby odzyskać siłę!")
             else:
@@ -59,7 +59,7 @@
         print(f"Zloto: {zloto}")
         choose = input("Czy chcesz zaatakować Orka? (T/N): ").upper()
         if choose == "T":
-            if (atak_ork >= self.hp & hp_ork >= self.atak ):
+            if (atak_ork >= self.hp and hp_ork >= self.atak ):
                 print("Przegrałeś!")
                 print("Odpocznij w karczmie aby odzyskać siłę!")
             else:
@@ -80,7 +80,7 @@
         print(f"Zloto: {zloto}")
         choose = input("Czy chcesz zaatakować Orka? (T/N): ").upper()
         if choose == "T":
-            if (atak_golem >= self.hp & hp_golem >= self.atak ):
+            if (atak_golem >= self.hp and hp_golem >= self.atak ):
                 print("Przegrałeś!")
                 print("Odpocznij w karczmie aby odzyskać siłę!")
             else:
@@ -101,7 +101,7 @@
         print(f"Zloto: {zloto}")
         choose = input("Czy chcesz zaatakować Smoka? (T/N): ").upper()
         if choose == "T":
-            if (atak_smok >= self.hp & hp_smok >= self.atak ):
+            if (atak_smok >= self.hp and hp_smok >= self.atak ):
                 print("Przegrałeś!")
                 print("Odpocznij w karczmie aby odzyskać siłę!")
             else:
@@ -114,3 +114,20 @@
                 print("Autor: Wnukoo")
         else:
             print("Uciekaj tchórzu!")
+
+    def zapisz_stan(self, filename):
+        with open(filename, 'w') as file:
+            file.write(f"{self.hp}\n")
+            file.write(f"{self.atak}\n")
+            file.write(f"{self.gold}\n")
+        print("Stan gry zapisany!")
+
+    def wczytaj_stan(self, filename):
+        try:
+            with open(filename, 'r') as file:
+                self.hp = int(file.readline().strip())
+                self.atak = int(file.readline().strip())
+                self.gold = int(file.readline().strip())
+            print("Stan gry wczytany!")
+        except FileNotFoundError:
+            print("Brak pliku zapisu, zaczynasz grę od nowa.")
