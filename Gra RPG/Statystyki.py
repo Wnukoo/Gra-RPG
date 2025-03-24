@@ -1,19 +1,20 @@
 ﻿class Statystyki:
 
-    def __init__(self,user, hp, atak, pieniadze):
-        self.hp = hp
-        self.atak = atak
-        self.pieniadze = pieniadze
-        self.user = user
-    
+    # def __init__(self,user, hp, atak, pieniadze):
+    #     self.hp = hp
+    #     self.atak = atak
+    #     self.pieniadze = pieniadze
+    #     self.user = user
+        
+
     def gracz (self):
-        self.hp = 100
-        self.atak = 10
-        self.pieniadze = 50
-        print(f"Statystyki {self.user}:\n")
-        print(f"HP: {self.hp}")
-        print(f"Atak: {self.atak}")
-        print(f"Pieniądze: {self.pieniadze}")
+        hp = 1000
+        atak = 100
+        pieniadze = 500
+        print(f"Statystyki Gracza:\n")
+        print(f"HP: {hp}")
+        print(f"Atak: {atak}")
+        print(f"Pieniądze: {pieniadze}")
         print("-" * 20)
 
     def __str__(self):
@@ -28,11 +29,11 @@
     def wyswietl_statystyki(self, nazwa):
         print(self.__str__().replace("postaci", nazwa))
 
-    # def zmien_statystyki(self, hp=0, atak=0, pieniadze=0):
-    #     self.hp += hp
-    #     self.atak += atak
-    #     self.pieniadze += pieniadze
-    #     print(f"\nZmieniono statystyki: HP {hp}, Atak {atak}, Pieniądze {pieniadze}\n")
+    def zmien_statystyki(self, hp=0, atak=0, pieniadze=0):
+        self.hp += hp
+        self.atak += atak
+        self.pieniadze += pieniadze
+        print(f"\nZmieniono statystyki: HP {hp}, Atak {atak}, Pieniądze {pieniadze}\n")
 
 
 # Wyświetlanie statystyk

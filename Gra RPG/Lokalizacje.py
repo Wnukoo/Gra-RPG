@@ -1,23 +1,29 @@
 ﻿from Statystyki import Statystyki
 
 class Lokalizacje:
+
     def __init__(self, nazwa, opis):
         self.nazwa = nazwa  
         self.opis = opis
         #Potwory
-        self.potwory=[]
-        self.potwory.append(Statystyki("1 - Goblin", 50, 5, 10))
-        self.potwory.append(Statystyki("2 - Ork",50, 20, 100))
-        self.potwory.append(Statystyki("3 - Golem", 75, 30, 150))
-        self.potwory.append(Statystyki("4 - Smok", 100, 40, 200))
+        # self.potwory=[]
+        # self.potwory.append(Statystyki("1 - Goblin", 50, 5, 10))
+        # self.potwory.append(Statystyki("2 - Ork",50, 20, 100))
+        # self.potwory.append(Statystyki("3 - Golem", 75, 30, 150))
+        # self.potwory.append(Statystyki("4 - Smok", 100, 40, 200))
+        # self.gracz = Statystyki("Gracza",100, 10, 50)
+
 
     def kowal(self):
         print(self.opis)
-        print("1. Ulepsz broń")
+        print("1. Ulepsz broń - koszt 5G")
         print("2. Wyjdź")
         akcja = input("Wybierz akcję: ") 
         if akcja == "1":
-            print("Broń ulepszona!")
+            print("Bron ulepszona!")
+            print("Twoj atak zwiekszyl sie o 5!")
+            self.gracz.zmien_statystyki(hp=0, atak=5, pieniadze=-5)
+            print(self.gracz)
         elif akcja == "2":
             print("Do widzenia!")
         print ("---------------------------------")

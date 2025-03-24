@@ -3,7 +3,7 @@ from Lokalizacje import Lokalizacje
 
 class Menu:
     def __init__(self):
-        self.gracz = Statystyki("Gracza",100, 10, 50)
+        self.gracz = Statystyki()
         self.kowal = Lokalizacje("Kowal", "Stary kowal, ktory ulepsza bron.")
         self.sklep = Lokalizacje("Sklep", "Sklep z przedmiotami.")
         self.karczma = Lokalizacje("Karczma", "Karczma, gdzie mozna odpoczac.")
